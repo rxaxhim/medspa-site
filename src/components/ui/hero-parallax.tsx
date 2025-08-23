@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "@/lib/asset";
 
 /** Supply 6+ images; we'll loop them to fill rows if needed */
 const PRODUCTS = [
@@ -131,7 +132,10 @@ function ProductCard({
   product: Product;
   translate: MotionValue<number>;
 }) {
-  const [src, setSrc] = React.useState(product.thumbnail);
+  // ✅ Resolve GitHub Pages base path for thumbnails
+  const resolve = (s: string) => (s.startsWith("http") ? s : asset(s));
+  const [src, setSrc] = React.useState(resolve(product.thumbnail));
+
   return (
     <motion.div
       style={{ x: translate }}

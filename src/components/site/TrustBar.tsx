@@ -1,4 +1,5 @@
 import * as React from "react"
+import { asset } from "@/lib/asset"
 
 export default function TrustBar() {
   // Update extensions here if your files are PNG/WEBP instead of SVG.
@@ -39,7 +40,8 @@ export default function TrustBar() {
 }
 
 function LogoImg({ src, alt }: { src: string; alt: string }) {
-  const [currentSrc, setCurrentSrc] = React.useState(src)
+  // Prefix GitHub Pages base path so /images/... works under /medspa-site/
+  const [currentSrc, setCurrentSrc] = React.useState(asset(src))
 
   // Try .svg -> .png -> .webp if the previous file isn't found
   const handleError = React.useCallback(() => {
