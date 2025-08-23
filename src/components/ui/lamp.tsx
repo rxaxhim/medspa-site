@@ -1,5 +1,4 @@
 "use client";
-import * as React from "react";
 // If you use framer-motion, swap the import:
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
