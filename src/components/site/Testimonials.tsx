@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { Marquee } from "@/components/magicui/marquee";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
