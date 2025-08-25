@@ -32,9 +32,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar (aligned with content width) */}
-      <div className="border-t">
-        <div className="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Northshore Clinic
+      <div className="mx-auto max-w-7xl px-4 py-4 text-xs text-slate-500">
+        <div className="flex flex-col items-center justify-between gap-2 text-center md:flex-row">
+          <span>© {new Date().getFullYear()} Northshore Clinic</span>
+          <a
+            href="https://yoururls.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-slate-700"
+          >
+            Website by <span className="font-medium">YourUrls</span>
+          </a>
         </div>
       </div>
     </footer>

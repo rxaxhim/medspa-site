@@ -56,7 +56,7 @@ function LogoImg({ src, alt }: { src: string; alt: string }) {
       loading="lazy"
       decoding="async"
       onError={handleError}
-      className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+      className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity hover:grayscale-0"
     />
   )
 }

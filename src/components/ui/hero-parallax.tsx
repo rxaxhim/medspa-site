@@ -55,54 +55,76 @@ function HeroParallaxOverlay({ products }: { products: Product[] }) {
       ref={ref}
       className="relative w-full overflow-hidden border-b bg-gradient-to-br from-primary/10 via-white to-slate-50"
     >
-    {/* Overlayed HERO COPY (clickable) */}
-    <div className="pointer-events-auto absolute inset-0 z-20">
-      {/* center the content */}
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-center px-4">
-        <div className="relative w-full text-center">
-          {/* soft glow behind text (no clicks) */}
-          <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-            <div className="h-64 w-[90%] max-w-4xl rounded-full bg-primary/20 blur-3xl" />
-          </div>
+      {/* Overlayed HERO COPY (clickable) */}
+      <div className="pointer-events-auto absolute inset-0 z-20">
+        {/* center the content */}
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-center px-4">
+          <div className="relative w-full text-center">
+            {/* soft glow behind text (no clicks) */}
+            <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+              {/* smaller glow on mobile */}
+              <div className="h-40 sm:h-56 md:h-64 w-[85%] sm:w-[90%] max-w-4xl rounded-full bg-primary/20 blur-3xl" />
+            </div>
 
-          {/* glassy panel to improve contrast */}
-          <div className="mx-auto max-w-3xl rounded-2xl bg-white/60 p-6 shadow-lg ring-1 ring-black/5 backdrop-blur-sm md:p-8">
-            <div className="space-y-6 md:space-y-8">
-              <Badge className="rounded-full bg-primary/20 text-primary px-4 py-2 text-sm md:text-base">
-                Modern Care, Compassionate Team
-              </Badge>
+            {/* glassy panel to improve contrast */}
+            <div
+              className="
+                mx-auto w-full
+                max-w-sm sm:max-w-md md:max-w-3xl   /* narrower on mobile */
+                rounded-xl md:rounded-2xl           /* slightly smaller radius on mobile */
+                bg-white/60 shadow-lg ring-1 ring-black/5 backdrop-blur-sm
+                p-4 sm:p-6 md:p-8                   /* tighter padding on mobile */
+              "
+            >
+              <div className="space-y-5 sm:space-y-6 md:space-y-8">
+                <Badge className="rounded-full bg-primary/20 text-primary px-3 py-1.5 text-xs sm:text-sm md:text-base">
+                  Modern Care, Compassionate Team
+                </Badge>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
-                Expert Medical Aesthetics &amp; Skin Health
-              </h1>
+                {/* smaller heading on mobile */}
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight md:leading-[1.05] tracking-tight">
+                  Expert Medical Aesthetics &amp; Skin Health
+                </h1>
 
-              <p className="text-lg md:text-xl text-slate-600">
-                Personalized treatments, evidence-based results, and easy online booking.
-                Trusted by patients across the GTA.
-              </p>
+                {/* smaller body on mobile */}
+                <p className="text-base sm:text-lg md:text-xl text-slate-600">
+                  Personalized treatments, evidence-based results, and easy online booking.
+                  Trusted by patients across the GTA.
+                </p>
 
-              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Button asChild size="lg" className="w-full sm:w-auto">
-                  <a href="#book">Book Appointment</a>
-                </Button>
-                <Button variant="outline" asChild size="lg" className="w-full sm:w-auto">
-                  <a href="#services">View Services</a>
-                </Button>
-              </div>
+                <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  {/* keep size=lg but trim height/padding on mobile */}
+                  <Button asChild size="lg" className="w-full sm:w-auto h-10 sm:h-11 px-5 sm:px-6">
+                    <a href="#book">Book Appointment</a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    asChild
+                    size="lg"
+                    className="w-full sm:w-auto h-10 sm:h-11 px-5 sm:px-6"
+                  >
+                    <a href="#services">View Services</a>
+                  </Button>
+                </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-1 text-sm md:text-base text-slate-500">
-                <div>• Nurse-led clinic</div>
-                <div>• Free consultations</div>
-                <div>• Direct messaging</div>
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 text-xs sm:text-sm md:text-base text-slate-500">
+                  <div>• Nurse-led clinic</div>
+                  <div>• Free consultations</div>
+                  <div>• Direct messaging</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
       {/* PARALLAX SCENE – responsive height and positioning */}
-      <div className="pointer-events-none relative z-10 h-[140vh] pt-10 pb-0 antialiased [perspective:1000px] [transform-style:preserve-3d]">
+      <div
+        className="pointer-events-none relative z-10
+        h-[115vh] xl:h-[160vh] 2xl:h-[115vh]
+        pt-10 pb-0
+        [perspective:1000px] [transform-style:preserve-3d]"
+      >
         <motion.div style={{ rotateX: rotX, rotateZ: rotZ, translateY: transY, opacity: fade }}>
           {/* Row 1 (right-to-left like original) */}
           <motion.div className="mb-16 sm:mb-20 md:mb-24 lg:mb-28 flex flex-row-reverse space-x-reverse space-x-4 sm:space-x-6 md:space-x-12 lg:space-x-20">

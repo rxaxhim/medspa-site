@@ -17,8 +17,8 @@ export default function BeforeAfter() {
       <div className="mx-auto max-w-3xl">
         <div className="aspect-[16/10]">
           <Compare
-            beforeSrc={asset("images/before.png")}
-            afterSrc={asset("images/after.png")}
+            beforeSrc={asset("images/after.png")}
+            afterSrc={asset("images/before.png")}
             initial={50}
             mode={isTouch ? "drag" : "hover"}  // auto behavior
             showHandle={true}
